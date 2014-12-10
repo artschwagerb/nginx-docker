@@ -1,0 +1,5 @@
+server {
+	listen 80;
+	server_name brian.htps.us;
+	return 301 https://helpdesk.htps.us;
+}

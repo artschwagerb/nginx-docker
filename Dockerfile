@@ -14,7 +14,7 @@ ADD certificates /app/certificates
 ADD www /app/www
 
 # copy configuration files
-ADD nginx.conf /etc/nginx/sites-enabled/default
+ADD nginx /etc/nginx/sites-enabled
 
 # By default, simply start apache.
 CMD /usr/sbin/nginx
