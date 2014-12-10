@@ -4,7 +4,7 @@ MAINTAINER Brian Artschwager brian@artschwager.com
 RUN apt-get update
 #RUN apt-get -y upgrade
  
-RUN apt-get install -y nginx
+RUN apt-get install -y nginx git
 
 # create/modify files
 RUN mkdir /app
@@ -13,12 +13,11 @@ RUN touch /app/logs/nginx-access.log
 WORKDIR /app
 
 # code repository
-ADD certificates /app/certificates
-ADD www /app/www
+git clone https://github.com/artschwagerb/nginx-docker.git
 
 # copy configuration files
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
-ADD nginx /etc/nginx/sites-enabled
+CMD cp /app/nginx/. /etc/nginx/sites-enabled/
 
 # expose HTTP
 EXPOSE 80
