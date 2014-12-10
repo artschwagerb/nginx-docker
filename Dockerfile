@@ -13,7 +13,7 @@ RUN touch /app/logs/nginx-access.log
 WORKDIR /app
 
 # code repository
-git clone https://github.com/artschwagerb/nginx-docker.git
+CMD git clone https://github.com/artschwagerb/nginx-docker.git /app
 
 # copy configuration files
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
