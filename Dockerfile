@@ -1,9 +1,8 @@
-FROM debian
+FROM ubuntu
 MAINTAINER Brian Artschwager brian@artschwager.com
 
-ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
-RUN apt-get -y upgrade
+#RUN apt-get -y upgrade
  
 RUN apt-get install -y nginx
 
@@ -20,5 +19,8 @@ ADD www /app/www
 # copy configuration files
 ADD nginx /etc/nginx/sites-enabled
 
-# By default, simply start apache.
-CMD /usr/sbin/nginx
+# expose HTTP
+EXPOSE 80
+
+# Run
+CMD /usr/sbin/nginx -c /etc/nginx/nginx.conf
