@@ -18,7 +18,6 @@ ADD www /app/www
 
 # copy configuration files
 ADD nginx /etc/nginx/sites-enabled
-CMD rm /etc/nginx/sites-enabled/README.md
 
 # By default, simply start apache.
 CMD /usr/sbin/nginx
