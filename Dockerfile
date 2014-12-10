@@ -17,6 +17,7 @@ ADD certificates /app/certificates
 ADD www /app/www
 
 # copy configuration files
+RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 ADD nginx /etc/nginx/sites-enabled
 
 # expose HTTP
