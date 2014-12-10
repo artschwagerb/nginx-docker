@@ -1,5 +1,8 @@
 FROM ubuntu
 MAINTAINER Brian Artschwager brian@artschwager.com
+
+RUN apt-get update
+RUN apt-get -y upgrade
  
 RUN apt-get install -y nginx
 
