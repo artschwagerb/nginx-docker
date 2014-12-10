@@ -1,8 +1,9 @@
-FROM ubuntu
+FROM debian
 MAINTAINER Brian Artschwager brian@artschwager.com
 
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
-#RUN apt-get -y upgrade
+RUN apt-get -y upgrade
  
 RUN apt-get install -y nginx
 
